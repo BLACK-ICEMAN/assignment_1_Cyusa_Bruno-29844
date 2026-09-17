@@ -23,9 +23,9 @@ III. 30 order_items linking orders to products with quantities.
 
 ## Executing '01_tables.sql' to create tables
 
-create table customers ( customer_id number primary key, customer_name varchar2(100), email varchar2(100), city varchar2(50));
-create table products (product_id number primary key, product_name varchar2(100), category varchar2(50), price number(10,2));
-create table orders (order_id number primary key, customer_id number references customers(customer_id), order_date date);
+create table customers ( customer_id number primary key, customer_name varchar2(100), email varchar2(100), city varchar2(50));  
+create table products (product_id number primary key, product_name varchar2(100), category varchar2(50), price number(10,2));  
+create table orders (order_id number primary key, customer_id number references customers(customer_id), order_date date);  
 create table order_items (order_item_id number primary key, order_id number references orders(order_id), product_id number references products(product_id), quantity number);
 
 After running these queries you will have 4 four tables created !!
@@ -42,31 +42,31 @@ insert into customers (customer_id, customer_name, email, city) values (5, 'Shem
 
 ## Products(8)
 
-insert into products (product_id, product_name, category, price) values (1, 'rice', 'grocery', 300);
-insert into products (product_id, product_name, category, price) values (2, 'beans', 'grocery', 400);
-insert into products (product_id, product_name, category, price) values (3, 'cooking oil', 'dairy', 500);
-insert into products (product_id, product_name, category, price) values (4, 'milk', 'dairy', 700);
-insert into products (product_id, product_name, category, price) values (5, 'cheese', 'dairy', 600);
-insert into products (product_id, product_name, category, price) values (6, 'yogurt', 'dairy', 800);
-insert into products (product_id, product_name, category, price) values (7, 'orange juice', 'beverage', 1000);
+insert into products (product_id, product_name, category, price) values (1, 'rice', 'grocery', 300);  
+insert into products (product_id, product_name, category, price) values (2, 'beans', 'grocery', 400);  
+insert into products (product_id, product_name, category, price) values (3, 'cooking oil', 'dairy', 500);  
+insert into products (product_id, product_name, category, price) values (4, 'milk', 'dairy', 700);  
+insert into products (product_id, product_name, category, price) values (5, 'cheese', 'dairy', 600);  
+insert into products (product_id, product_name, category, price) values (6, 'yogurt', 'dairy', 800);  
+insert into products (product_id, product_name, category, price) values (7, 'orange juice', 'beverage', 1000);  
 insert into products (product_id, product_name, category, price) values (8, 'water', 'beverage', 550);
 
 ## Orders(15, Jan-Mar 2026)
 
-insert into orders (order_id, customer_id, order_date) values (1, 1, to_date('2026-01-05','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (2, 2, to_date('2026-01-07','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (3, 1, to_date('2026-01-15','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (4, 3, to_date('2026-01-20','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (5, 4, to_date('2026-01-22','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (6, 2, to_date('2026-02-01','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (7, 1, to_date('2026-02-03','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (8, 5, to_date('2026-02-10','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (9, 3, to_date('2026-02-14','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (10, 2, to_date('2026-02-20','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (11, 4, to_date('2026-03-01','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (12, 1, to_date('2026-03-05','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (13, 5, to_date('2026-03-10','YYYY-MM-DD'));
-insert into orders (order_id, customer_id, order_date) values (14, 3, to_date('2026-03-15','YYYY-MM-DD'));
+insert into orders (order_id, customer_id, order_date) values (1, 1, to_date('2026-01-05','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (2, 2, to_date('2026-01-07','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (3, 1, to_date('2026-01-15','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (4, 3, to_date('2026-01-20','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (5, 4, to_date('2026-01-22','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (6, 2, to_date('2026-02-01','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (7, 1, to_date('2026-02-03','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (8, 5, to_date('2026-02-10','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (9, 3, to_date('2026-02-14','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (10, 2, to_date('2026-02-20','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (11, 4, to_date('2026-03-01','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (12, 1, to_date('2026-03-05','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (13, 5, to_date('2026-03-10','YYYY-MM-DD'));  
+insert into orders (order_id, customer_id, order_date) values (14, 3, to_date('2026-03-15','YYYY-MM-DD'));  
 insert into orders (order_id, customer_id, order_date) values (15, 2, to_date('2026-03-20','YYYY-MM-DD'));
 
 ## Order_items (30)
