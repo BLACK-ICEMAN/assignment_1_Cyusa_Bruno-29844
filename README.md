@@ -8,7 +8,7 @@ SQL/DBMS TOOL : Oracle (SQL*PLUS/ SQL Developer)
 ## How to run
 
 1. Run '01_tables.sql' : To create the four tables (customers, products, orders, order_items).
-2. Run '02_data.sql' : To insert sample data (6 customers, 8 products, 15 orders, 30 order_items)
+2. Run '02_data.sql' : To insert sample data (6 customers, 8 products, 15 orders, 30 order_items).
 3. Run '03_queries.sql' : To run 8 required queries in order. Each query is commented with the question it answers.
 
 All scripts are plain Oracle SQL, so they can be run in both SQL*PLUS and SQL Developer.
@@ -37,10 +37,10 @@ After running these queries you will have 4 four tables created !!
 
 ## Customers(5)
 
-insert into customers (customer_id, customer_name, email, city) values (1, 'Alice Uwase', 'uwasealice@gmail.com');
-insert into customers (customer_id, customer_name, email, city) values (2, 'Ishimwe David', 'ishimwedavid@gmail.com);
-insert into customers (customer_id, customer_name, email, city) values (3, 'Iranzi Thiery', 'iranzithiery@gmail.com');
-insert into customers (customer_id, customer_name, email, city) values (4, 'Ishimwe Eric', 'ishimweeric@gmail.com');
+insert into customers (customer_id, customer_name, email, city) values (1, 'Alice Uwase', 'uwasealice@gmail.com');  
+insert into customers (customer_id, customer_name, email, city) values (2, 'Ishimwe David', 'ishimwedavid@gmail.com);  
+insert into customers (customer_id, customer_name, email, city) values (3, 'Iranzi Thiery', 'iranzithiery@gmail.com');  
+insert into customers (customer_id, customer_name, email, city) values (4, 'Ishimwe Eric', 'ishimweeric@gmail.com');  
 insert into customers (customer_id, customer_name, email, city) values (5, 'Shema Edwin', 'shemaedwin@gmail.com');
 
 ## Products(8)
