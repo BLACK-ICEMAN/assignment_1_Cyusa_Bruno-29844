@@ -112,6 +112,41 @@ select o.order_id, c.customer_id, c.customer_name, c.city, o.order_date from ord
 
 <img width="206" height="161" alt="image" src="https://github.com/user-attachments/assets/3a03ed14-96cd-4bf8-b20d-fca73fb4ed58" />
 
+## Q2: List every order item with the product name, category, price, and quantityordered. (JOIN: order_items + products)
+
+select oi.order_item_id, oi.order_id, p.product_id, p.product_name, p.category, p.price, oi.quantity from order_items oi join products p on oi.product_id = p.product_id order by oi.order_item_id;
+
+<img width="279" height="312" alt="image" src="https://github.com/user-attachments/assets/37e8bf80-720c-46b6-bb07-f5cdb4265278" />
+
+## Q3: List all customers and, where they exist, their orders including customers whohave never placed an order. (LEFT JOIN: customers + orders)
+
+select c.customer_id, c.customer_name, c.email, c.city, o.order_id, o.order_date from customers c left join orders o on c.customer_id = o.customer_id order by c.customer_id, o.order_date;
+
+<img width="308" height="161" alt="image" src="https://github.com/user-attachments/assets/78b9c56c-ee1d-403b-bfcf-90267fe9b92c" />  
+
+## Q4: Calculates each customer's total amount spent (quantity × price, summedacross all their order items), then returns only customers who have spent abovethe average customer spend. (Use a CTE to compute per-customer totals first, then filter against the average in the main query.)
+
+with customer_totals as ( select c.customer_id, c.customer_name, c.email, c.city, sum(oi.quantity * p.price) 
+as total_spent from customers c join orders o on o.customer_id = c.customer_id join order_items oi on oi.order_id = o.order_id join products p on p.product_id = oi.product_id 
+group by c.customer_id, c.customer_name, c.email, c.city) 
+select customer_id, customer_name, email, city, round(total_spent, 2) from customer_totals
+where total_spent > (select avg(total_spent) from customer_totals);
+
+<img width="301" height="23" alt="image" src="https://github.com/user-attachments/assets/11f41186-f094-4188-b800-55faf016c99f" />
+
+## Q5: Rank customers by total amount spent, highest first
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
