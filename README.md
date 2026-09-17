@@ -16,6 +16,7 @@ All scripts are plain Oracle SQL, so they can be run in both SQL*PLUS and SQL De
 ## Scenario summary
 
 Sunrise Supermarket sells products to customers who place orders containing one or more items. The sample dataset models:
+
 I. 5 customers based in (kigali [2], musanze, huye and rubavu).
 II. 8 products across 3 categories (Grocery, Dairy, Beverages).
 III. 30 order_items linking orders to products with quantities.
@@ -35,6 +36,7 @@ After running these queries you will have 4 four tables created !!
 ## Executing '02_data.sql' to insert data in the 4 tables created above
 
 ## Customers(5)
+
 insert into customers (customer_id, customer_name, email, city) values (1, 'Alice Uwase', 'uwasealice@gmail.com');
 insert into customers (customer_id, customer_name, email, city) values (2, 'Ishimwe David', 'ishimwedavid@gmail.com);
 insert into customers (customer_id, customer_name, email, city) values (3, 'Iranzi Thiery', 'iranzithiery@gmail.com');
@@ -42,6 +44,7 @@ insert into customers (customer_id, customer_name, email, city) values (4, 'Ishi
 insert into customers (customer_id, customer_name, email, city) values (5, 'Shema Edwin', 'shemaedwin@gmail.com');
 
 ## Products(8)
+
 insert into products (product_id, product_name, category, price) values (1, 'rice', 'grocery', 300);
 insert into products (product_id, product_name, category, price) values (2, 'beans', 'grocery', 400);
 insert into products (product_id, product_name, category, price) values (3, 'cooking oil', 'dairy', 500);
@@ -52,6 +55,7 @@ insert into products (product_id, product_name, category, price) values (7, 'ora
 insert into products (product_id, product_name, category, price) values (8, 'water', 'beverage', 550);
 
 ## Orders(15, Jan-Mar 2026)
+
 insert into orders (order_id, customer_id, order_date) values (1, 1, to_date('2026-01-05','YYYY-MM-DD'));
 insert into orders (order_id, customer_id, order_date) values (2, 2, to_date('2026-01-07','YYYY-MM-DD'));
 insert into orders (order_id, customer_id, order_date) values (3, 1, to_date('2026-01-15','YYYY-MM-DD'));
@@ -69,6 +73,7 @@ insert into orders (order_id, customer_id, order_date) values (14, 3, to_date('2
 insert into orders (order_id, customer_id, order_date) values (15, 2, to_date('2026-03-20','YYYY-MM-DD'));
 
 ## Order_items (30)
+
 insert into, order_items (order_item_id, order_id, product_id, quantity) values (1, 1, 1, 3);
 insert into, order_items (order_item_id, order_id, product_id, quantity) values (2, 2, 4, 1);
 insert into, order_items (order_item_id, order_id, product_id, quantity) values (3, 2, 2, 5);
@@ -107,6 +112,7 @@ commit;
 ## Q1: List every order with the customer's name and city, and the order date. (INNER JOIN: orders + customers)
 
 select o.order_id, c.customer_id, c.customer_name, c.city, o.order_date from orders o inner join customers c on o.customer_id = c.customer_id order by o.order_date, o.order_id;
+
 <img width="206" height="161" alt="image" src="https://github.com/user-attachments/assets/3a03ed14-96cd-4bf8-b20d-fca73fb4ed58" />
 
 
