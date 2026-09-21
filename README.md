@@ -17,8 +17,8 @@ All scripts are plain Oracle SQL, so they can be run in both SQL*PLUS and SQL De
 
 Sunrise Supermarket sells products to customers who place orders containing one or more items. The sample dataset models:
 
-I. 5 customers based in (kigali [2], musanze, huye and rubavu).
-II. 8 products across 3 categories (Grocery, Dairy, Beverages).
+I. 5 customers based in (kigali [2], musanze, huye and rubavu).  
+II. 8 products across 3 categories (Grocery, Dairy, Beverages).  
 III. 30 order_items linking orders to products with quantities.
 
 ## Executing '01_tables.sql' to create tables
