@@ -5,6 +5,23 @@ NAME : CYUSA Bruno
 ID : 29844
 SQL/DBMS TOOL : Oracle (SQL*PLUS/ SQL Developer)
 
+# Assignment Overview
+
+This repository contains an Oracle SQL database model built for Sunrise Supermarket. It uses structured relational tables to track customers, manage store inventories, and log individual retail sales. Below you will be able to see steps on how to do the following:
+
+* Create tables with exact primary and foreign key constraints (Customer, Products, Order_items and Orders)
+* Insert data into the tables created using seed records across regional locations, product categories, and transaction histories
+* Execute queries including (Inner join and join operations, aggregations and filtering.
+
+## Scenario summary
+
+Sunrise Supermarket sells products to customers who place orders containing one or more items. The sample dataset models:
+
+I. 5 customers based in (kigali [2], musanze, huye and rubavu).  
+II. 8 products across 3 categories (Grocery, Dairy, Beverages).  
+III. 15 Orders capturing historical sales transactions
+IV. 30 order_items linking orders to products with quantities.
+
 ## How to run
 
 1. Run '01_tables.sql' : To create the four tables (customers, products, orders, order_items).
@@ -13,32 +30,25 @@ SQL/DBMS TOOL : Oracle (SQL*PLUS/ SQL Developer)
 
 All scripts are plain Oracle SQL, so they can be run in both SQL*PLUS and SQL Developer.
 
-## Scenario summary
-
-Sunrise Supermarket sells products to customers who place orders containing one or more items. The sample dataset models:
-
-I. 5 customers based in (kigali [2], musanze, huye and rubavu).  
-II. 8 products across 3 categories (Grocery, Dairy, Beverages).  
-III. 30 order_items linking orders to products with quantities.
-
-## Executing '01_tables.sql' to create tables
+## Step 1: Create Table Structures '01_tables.sql'
+Run this script first to build the relational tables, data types, and primary/foreign key connections.
 ```sql  
 create table customers ( customer_id number primary key, customer_name varchar2(100), email varchar2(100), city varchar2(50));  
 create table products (product_id number primary key, product_name varchar2(100), category varchar2(50), price number(10,2));  
 create table orders (order_id number primary key, customer_id number references customers(customer_id), order_date date);  
 create table order_items (order_item_id number primary key, order_id number references orders(order_id), product_id number references products(product_id), quantity number);
 ```
-After running these queries you will have 4 four tables created !!
-
-## Executing '02_data.sql' to insert data in the 4 tables created above
+You should have four tables created successfully!!
+## Step 2: Seed the Database '02_data.sql'  
+Run this second to seed the database records. The script closes with a mandatory transactional 'commit;' command to finalize the state.
 
 ## Customers(5)
 ```sql
-insert into customers (customer_id, customer_name, email, city) values (1, 'Alice Uwase', 'uwasealice@gmail.com');  
-insert into customers (customer_id, customer_name, email, city) values (2, 'Ishimwe David', 'ishimwedavid@gmail.com');  
-insert into customers (customer_id, customer_name, email, city) values (3, 'Iranzi Thiery', 'iranzithiery@gmail.com');  
-insert into customers (customer_id, customer_name, email, city) values (4, 'Ishimwe Eric', 'ishimweeric@gmail.com');  
-insert into customers (customer_id, customer_name, email, city) values (5, 'Shema Edwin', 'shemaedwin@gmail.com');
+insert into customers (customer_id, customer_name, email, city) values (1, 'Alice Uwase', 'uwasealice@gmail.com', 'kigali');  
+insert into customers (customer_id, customer_name, email, city) values (2, 'Ishimwe David', 'ishimwedavid@gmail.com', 'musasnze');  
+insert into customers (customer_id, customer_name, email, city) values (3, 'Iranzi Thiery', 'iranzithiery@gmail.com', 'kigali');  
+insert into customers (customer_id, customer_name, email, city) values (4, 'Ishimwe Eric', 'ishimweeric@gmail.com', 'huye');  
+insert into customers (customer_id, customer_name, email, city) values (5, 'Shema Edwin', 'shemaedwin@gmail.com', 'rubavu');
 ```
 ## Products(8)
 ```sql
@@ -104,7 +114,8 @@ insert into, order_items (order_item_id, order_id, product_id, quantity) values 
 
 commit;
 ```
-## Executing '03_queries.sql' to run 8 required queries in order.
+## Step 3: Analytics and executing queries '03_queries.sql'  
+Run this operational script to evaluate assignment metrics.
 
 ## Q1: List every order with the customer's name and city, and the order date. (INNER JOIN: orders + customers)
 ```sql
