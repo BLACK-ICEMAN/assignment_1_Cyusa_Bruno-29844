@@ -1,4 +1,4 @@
-# Assignment_1_Cyusa_Bruno-29844
+# Assignment_1_Cyusa_Bruno_29844
 PL/SQL Assignment One - Sunrise Supermarket
 
 NAME : CYUSA Bruno
