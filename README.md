@@ -1,5 +1,5 @@
 # Assignment_1_Cyusa_Bruno-29844
-PLSQL Assignment One - Sunrise Supermarket
+PL/SQL Assignment One - Sunrise Supermarket
 
 NAME : CYUSA Bruno
 ID : 29844
