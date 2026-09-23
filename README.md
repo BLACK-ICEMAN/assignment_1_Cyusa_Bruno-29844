@@ -1,7 +1,7 @@
 # Assignment_1_Cyusa_Bruno_29844
 PL/SQL Assignment One - Sunrise Supermarket
 
-NAME : CYUSA Bruno
+NAME : CYUSA Bruno  
 ID : 29844  
 SQL/DBMS TOOL : Oracle (SQL*PLUS/ SQL Developer)
 
