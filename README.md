@@ -2,7 +2,7 @@
 PL/SQL Assignment One - Sunrise Supermarket
 
 NAME : CYUSA Bruno
-ID : 29844
+ID : 29844  
 SQL/DBMS TOOL : Oracle (SQL*PLUS/ SQL Developer)
 
 # Assignment Overview
