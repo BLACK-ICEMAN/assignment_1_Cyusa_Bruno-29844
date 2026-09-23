@@ -151,7 +151,7 @@ where total_spent > (select avg(total_spent) from customer_totals);
 ```
 <img width="301" height="23" alt="image" src="https://github.com/user-attachments/assets/11f41186-f094-4188-b800-55faf016c99f" />  
 
-This analytical query utilizes a Common Table Expression (CTE) named customer_totals to aggregate the total value (quantity * price) spent by each individual. The main query then applies a WHERE clause that evaluates those totals against a nested subquery computing the universal average.
+This query utilizes a Common Table Expression (CTE) named customer_totals to aggregate the total value (quantity * price) spent by each individual. The main query then applies a WHERE clause that evaluates those totals against a nested subquery computing the universal average.
 
 ## Q5: Rank customers by total amount spent, highest first
 ```sql
