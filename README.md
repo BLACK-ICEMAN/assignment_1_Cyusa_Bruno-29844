@@ -23,6 +23,8 @@ III. 15 Orders capturing historical sales transactions
 IV. 30 order_items linking orders to products with quantities.
 
 ## How to run
+#### Note   
+All SQL files are in in folder "Database".
 
 1. Run '01_tables.sql' : To create the four tables (customers, products, orders, order_items).
 2. Run '02_data.sql' : To insert sample data (6 customers, 8 products, 15 orders, 30 order_items).
